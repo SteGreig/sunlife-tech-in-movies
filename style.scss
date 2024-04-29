@@ -1,0 +1,1119 @@
+
+/*------------------------------------------------
+	GENERALS / DEFAULTS
+-------------------------------------------------*/
+
+$blue: #009fe3;
+$yellow: #ffed00;
+$red: #ce222c;
+$darkblue: #143b62;
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mov-html {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("Custom/Source/images/appius/icons/icons.eot");
+  src: url("Custom/Source/images/appius/icons/icons.eot?#iefix") format("eot"), url("Custom/Source/images/appius/icons/icons.woff2") format("woff2"), url("Custom/Source/images/appius/icons/icons.woff") format("woff"), url("Custom/Source/images/appius/icons/icons.ttf") format("truetype"), url("Custom/Source/images/appius/icons/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "VAG Rounded W01 Light";
+  src: url("Custom/Source/fonts/appius/8eb3a61c-2df5-402f-aacc-7733752abec6.eot?#iefix");
+  src: url("Custom/Source/fonts/appius/8eb3a61c-2df5-402f-aacc-7733752abec6.eot?#iefix") format("eot"), url("Custom/Source/fonts/appius/67ca5d86-3357-4491-aa9f-6e7ff54b2e2e.woff") format("woff"), url("Custom/Source/fonts/appius/888f8505-0e2c-41e8-af58-21279dda85e5.ttf") format("truetype"), url("Custom/Source/fonts/appiusca4650e2-5aa3-4755-9c6d-256cbb4f5115.svg#ca4650e2-5aa3-4755-9c6d-256cbb4f5115") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
+  font-family: "VAG Rounded W01 Bold";
+  src: url("Custom/Source/fonts/appius/e043dd77-7cee-4a3c-b628-822e3bdbc8ac.eot?#iefix");
+  src: url("Custom/Source/fonts/appius/e043dd77-7cee-4a3c-b628-822e3bdbc8ac.eot?#iefix") format("eot"), url("Custom/Source/fonts/appius/5b73c12f-4a5a-4d8c-81be-1babf4a3f3dd.woff") format("woff"), url("Custom/Source/fonts/appius/5638af5b-03a3-4601-a279-943ee3b29448.ttf") format("truetype"), url("Custom/Source/fonts/appius40964335-0b3a-4c89-895c-1e8f58438faa.svg#40964335-0b3a-4c89-895c-1e8f58438faa") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(/Custom/Source/fonts/appius/glyphicons-halflings-regular.eot);
+  src: url(/Custom/Source/fonts/appius/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(/Custom/Source/fonts/appius/glyphicons-halflings-regular.woff2) format("woff2"), url(/Custom/Source/fonts/appius/glyphicons-halflings-regular.woff) format("woff"), url(/Custom/Source/fonts/appius/glyphicons-halflings-regular.ttf) format("truetype"), url(/Custom/Source/fonts/appius/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg"); }
+
+@font-face {
+  font-family: "Clarendon W01 Bold 692098";
+  src: url("/source/fonts/b1b2273f-6562-4dda-b82f-abe26a2801f3.eot?#iefix");
+  src: url("/source/fonts/b1b2273f-6562-4dda-b82f-abe26a2801f3.eot?#iefix") format("eot"), url("/source/fonts/ebfb2d05-23eb-4096-b4d2-22382a87d76b.woff") format("woff"), url("/source/fonts/861c0548-44ff-4b2b-80a3-c8ae44cbe9c8.ttf") format("truetype"), url("/source/fonts/e6e6c27f-7ec8-47cc-844c-c72378fc634c.svg#e6e6c27f-7ec8-47cc-844c-c72378fc634c") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@font-face {
+    font-family: 'bebasregular';
+    src: url('fonts/BEBAS___-webfont.eot');
+    src: url('fonts/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BEBAS___-webfont.woff') format('woff'),
+         url('fonts/BEBAS___-webfont.ttf') format('truetype'),
+         url('fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:700|Roboto+Slab:300,400,700&subset=latin-ext');
+
+.mov-wrap {
+  font-size: 16px;
+  font-family: VAG Rounded W01 Light;
+}
+
+body {
+  position: relative;
+  background: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+/*------------------------------------------------
+  CINEMA FRAME
+-------------------------------------------------*/
+
+.mov-frame-top {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  z-index: 999;
+  height: 30px;
+  display: block;
+
+  @media screen and (min-width: 700px) {
+    height: 50px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    height: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 70px;
+  }
+}
+
+.mov-frame-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: none;
+  z-index: 999;
+  height: 30px;
+
+  @media screen and (min-width: 700px) {
+    height: 50px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    height: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 70px;
+  }
+}
+
+.mov-frame-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  z-index: 998;
+
+  @media screen and (min-width: 1200px) {
+    width: 9%;
+  }
+}
+
+.mov-frame-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  z-index: 998;
+
+  @media screen and (min-width: 1200px) {
+    width: 9%;
+  }
+}
+
+
+
+/*------------------------------------------------
+  LOGO & SHARE TABS
+-------------------------------------------------*/
+
+.mov-social {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1100;
+  background: $darkblue;
+
+  .mov-logo {
+    float: left;
+    width: 50%;
+    padding: 5px 0 3px;
+    text-align: center;
+  }
+
+  .mov-logo img {
+    max-width: 80px;
+  }
+
+  .mov-share {
+    float: left;
+    width: 50%;
+    background: $yellow;
+    color: $darkblue;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      background: lighten($yellow, 2%);
+    }
+
+    &.active {
+      background: $red;
+      color: #fff;
+
+      &:hover {
+        background: lighten($red, 5%);
+      }
+    }
+
+    p {
+      margin: auto;
+      padding-top: 2px;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: calc(100% - 35px);
+    font-size: .8em;
+    left: 20px;
+    top: 10px;
+    background: transparent;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+    .mov-logo {
+      width: 70px;
+    }
+
+    .mov-share {
+      width: 100px;
+      font-size: 1.3em;
+    }
+
+    .mov-logo img {
+      max-width: 70px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+
+    .mov-logo {
+      width: 80px;
+    }
+
+    .mov-logo img {
+      max-width: 80px;
+    }
+  }
+}
+
+
+
+/*------------------------------------------------
+  SOCIAL SHARE MODAL
+-------------------------------------------------*/
+
+.mov-social-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, .93);
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  z-index: 1001;
+  -webkit-transform: scale(.6);
+  transform: scale(.6);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-pack: wrap;
+  flex-wrap: wrap;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+  transform: scale(1);
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .mov-tweet {
+    margin-right: 10px;
+  }
+}
+
+
+
+/*------------------------------------------------
+  SCENES
+-------------------------------------------------*/
+
+.mov-scenes-wrap {
+  position: relative;
+  top: 0;
+  left: 5%;
+  width: 90%;
+
+  img {
+    display: block;
+  }
+}
+
+/* main content wrap 
+--------------------- */
+.mov-content {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  height: 100%;
+  max-height: 75%;
+
+  @media screen and (min-width: 375px) {
+    max-height: 80%;
+  }
+
+  @media screen and (min-width: 500px) {
+    max-height: 85%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    max-height: calc(100% - 41px);
+    top: 0;
+    bottom: 41px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-height: calc(100% - 37px);
+    top: 0;
+    bottom: 37px;
+  }
+}
+
+/* slide wraps
+--------------------- */
+.mov-slide {
+  height: calc(100% - 60px);
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  width: 90%;
+  overflow: hidden;
+
+  @media screen and (min-width: 700px) {
+    top: 50px;
+    height: calc(100% - 100px);
+  }
+
+  @media screen and (min-width: 1000px) {
+    top: 60px;
+    height: calc(100% - 120px);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 82%;
+    left: 9%;
+    top: 70px;
+    height: calc(100% - 140px);
+  }
+}
+
+/* main slide background
+----------------------- */
+.mov-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #111;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    @media screen and (min-width: 1200px) {
+      background-size: cover;
+
+      &.caption-slide {
+        background-size: contain;
+      }
+    }
+}
+
+/* Slides that shrink into the center
+-------------------------------------- */
+.center-hide {
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* silent movie captions
+------------------------ */
+.caption-slide {
+  background: #e5ded0;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  @media screen and (min-width: 700px) {
+    background: #e5ded0 url('images/caption-bg.svg') center no-repeat;
+    background-size: contain;
+  }
+}
+
+.mov-lines-wrap {
+  height: 100%;
+}
+
+@-webkit-keyframes old-effect { 100% { left: 100%; } }
+@keyframes old-effect { 100% { left: 100%; } }
+
+[class^="mov-old-effect"] {
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(#000,.05);
+  -webkit-animation: 11s old-effect infinite linear;
+  animation: 11s old-effect infinite linear;
+}
+
+.mov-old-effect2 { left: 6%; -webkit-animation: 9s old-effect infinite linear; animation: 9s old-effect infinite linear; }
+.mov-old-effect3 { left: 50%; -webkit-animation: 10s old-effect infinite linear; animation: 10s old-effect infinite linear; width: 3px; background: rgba(#000,.03); }
+.mov-old-effect4 { left: 10%; -webkit-animation: 7s old-effect infinite linear alternate-reverse; animation: 7s old-effect infinite linear alternate-reverse; }
+.mov-old-effect5 { left: 20%; -webkit-animation: 8s old-effect infinite linear; animation: 8s old-effect infinite linear; }
+.mov-old-effect6 { left: 25%; -webkit-animation: 12s old-effect infinite linear; animation: 12s old-effect infinite linear; width: 3px; background: rgba(#000,.03); }
+.mov-old-effect7 { left: 40%; -webkit-animation: 9s old-effect infinite linear alternate-reverse; animation: 9s old-effect infinite linear alternate-reverse; }
+.mov-old-effect8 { left: 44%; -webkit-animation: 15s old-effect infinite linear; animation: 15s old-effect infinite linear; }
+.mov-old-effect9 { left: 60%; -webkit-animation: 13s old-effect infinite linear alternate-reverse; animation: 13s old-effect infinite linear alternate-reverse; width: 3px; background: rgba(#000,.03); }
+.mov-old-effect10 { left: 69%; -webkit-animation: 11s old-effect infinite linear; animation: 11s old-effect infinite linear; }
+
+.mov-txt-blue {
+  color: #0e3e68;
+  text-align: center;
+  text-transform: uppercase;
+  font: 700 1.1em/1.3 Raleway;
+  width: 85%;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  letter-spacing: 1px;
+
+  h2 {
+    font-size: 1.7em;
+    line-height: 1.1;
+  }
+
+  .date {
+    font-size: .9em;
+    font-weight: 700;
+    font-family: Raleway;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #0e3e68;
+    display: inline-block;
+    margin-top: 15px;
+  }
+
+  p {
+    text-transform: none;
+    font: 300 .9em/1.5 Roboto Slab;
+    margin: 1em 0;
+  }
+
+  @media screen and (min-width: 375px) {
+    font-size: 1.3em;
+  }
+
+  @media screen and (min-width: 700px) {
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 1.9em;
+    max-width: 750px;
+
+    .date {
+      font-size: .65em;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 2.3em;
+    max-width: 900px;
+  }
+}
+
+/* Blue background slides
+------------------------- */
+.mov-blue-bg {
+  background: #28adf3;
+  background: -webkit-radial-gradient(center, ellipse cover, #28adf3 0%,#1a72d2 46%,#072544 100%);
+  background: radial-gradient(ellipse at center, #28adf3 0%,#1a72d2 46%,#072544 100%);
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.mov-txt-white {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font: 700 .95em/1.3 Raleway;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  text-shadow: 0 3px 3px rgba(0,0,0,.15);
+  letter-spacing: 1px;
+
+  p {
+    margin: 1.2em 0;
+  }
+
+  @media screen and (min-width: 375px) {
+    font-size: 1.1em;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 1.5em;
+  }
+
+  @media screen and (min-width: 1000px) {
+    font-size: 1.7em;
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 1.9em;
+    max-width: 950px;
+  }
+}
+
+/* Tech Images
+----------------- */
+.mov-tech-img {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('images/psycho-tech.png');
+
+  @media screen and (min-width: 500px) {
+    background-position: top right;
+    background-size: contain;
+  }
+}
+
+/* Ordering
+---------------------------- */
+.mov-intro-1 { z-index: 102; }
+.mov-intro-2 { z-index: 101; }
+.mov-psycho-1 { z-index: 100; }
+.mov-psycho-2 { z-index: 99; }
+.mov-psycho-3 { z-index: 98; }
+.mov-psycho-4 { z-index: 97; }
+.mov-psycho-5 { z-index: 96; }
+.mov-16-candles-1 { z-index: 95; }
+.mov-16-candles-2 { z-index: 94; }
+.mov-16-candles-3 { z-index: 93; }
+.mov-16-candles-4 { z-index: 92; }
+.mov-oz-1 { z-index: 91; }
+.mov-oz-2 { z-index: 90; }
+.mov-oz-3 { z-index: 89; }
+.mov-oz-4 { z-index: 88; }
+.mov-oz-5 { z-index: 87; }
+.mov-shaw-1 { z-index: 86; }
+.mov-shaw-2 { z-index: 85; }
+.mov-shaw-3 { z-index: 84; }
+.mov-shaw-4 { z-index: 83; }
+.mov-shaw-5 { z-index: 82; }
+.mov-casa-1 { z-index: 81; }
+.mov-casa-2 { z-index: 80; }
+.mov-casa-3 { z-index: 79; }
+.mov-casa-4 { z-index: 78; }
+.mov-casa-5 { z-index: 77; }
+.mov-titanic-1 { z-index: 76; }
+.mov-titanic-2 { z-index: 75; }
+.mov-titanic-3 { z-index: 74; }
+.mov-titanic-4 { z-index: 73; }
+.mov-mail-1 { z-index: 72; }
+.mov-mail-2 { z-index: 71; }
+.mov-mail-3 { z-index: 70; }
+.mov-mail-4 { z-index: 69; }
+.mov-mail-5 { z-index: 68; }
+.mov-end-1 { z-index: 1; }
+
+
+
+/*------------------------------------------------
+  INTRO
+-------------------------------------------------*/
+
+@-webkit-keyframes bounce {
+  50% {
+    -webkit-transform: translateY(5px);
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.mov-intro-1 {
+
+  .mov-bg {
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .mov-txt-white {
+    text-transform: none;
+    font: 1em Roboto Slab;
+    margin: 20px;
+  }
+
+  i {
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+  }
+
+  img {
+    width: 600px;
+    max-width: 85%;
+    margin-top: 20px;
+  }
+}
+
+
+
+/*------------------------------------------------
+  PSYCHO
+-------------------------------------------------*/
+.mov-psycho-2 .mov-bg,
+.mov-psycho-4 .mov-bg {
+  background-image: url('images/psycho-2-800.jpg');
+  background-size: 125%;
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/psycho-2.jpg');
+  }
+}
+
+.mov-psycho-5 .mov-bg {
+  background-image: url('images/psycho-4-800.jpg');
+  background-size: 125%;
+  @media screen and (min-width: 700px) {
+    background-position: center;
+    background-size: cover;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/psycho-4.jpg');
+  }
+}
+
+.mov-psycho-5 .mov-tech-img {
+  display: none;
+
+  @media screen and (min-width: 700px) {
+    display: block;
+  }
+}
+
+.mov-psycho-car {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  bottom: 18%;
+  max-width: 150px;
+
+  @media screen and (min-width: 375px) {
+    bottom: 20%;
+  }
+
+  @media screen and (min-width: 450px) {
+    bottom: 20%;
+    max-width: 180px;
+    bottom: 60px;
+  }
+
+  @media screen and (min-width: 700px) {
+    bottom: -40px;
+    left: 23%;
+    max-width: 100%;
+  }
+}
+
+.black-strip {
+  width: 100%;
+  height: 22%;
+  background: #111;
+  position: absolute;
+  left: 0;
+
+  @media screen and (min-width: 700px) {
+    display: none;
+  }
+}
+
+.black-strip-bottom {
+  bottom: 0;
+}
+
+.black-strip-top {
+  top: 0;
+}
+
+
+
+/*------------------------------------------------
+  16 CANDLES
+-------------------------------------------------*/
+.mov-16-candles-2 .mov-bg,
+.mov-16-candles-4 .mov-bg {
+  background-image: url('images/16-candles-2-800.jpg');
+  background-size: 125%;
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/16-candles-2.jpg');
+    background-position: center bottom;
+  }
+}
+
+.mov-16-candles-4 .mov-tech-img {
+  background-image: url('images/16-candles-tech.jpg');
+  background-position: bottom center;
+  @media screen and (min-width: 375px) {
+    background-position: top right;
+  }
+}
+
+
+
+/*------------------------------------------------
+  WIZARD OF OZ
+-------------------------------------------------*/
+.mov-oz-2 .mov-bg,
+.mov-oz-5 .mov-bg {
+  background-image: url('images/oz-2-800.jpg');
+  background-size: 150%;
+  background-position: -140px center;
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/oz-2.jpg');
+    background-size: contain;
+  }
+}
+
+.mov-oz-5 .mov-tech-img {
+  background-image: url('images/oz-tech-small.jpg');
+  background-size: 150%;
+  background-position: -140px center;
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/oz-tech.jpg');
+    background-size: contain;
+  }
+}
+
+
+
+/*------------------------------------------------
+  SHAWSHANK REDEMPTION
+-------------------------------------------------*/
+.mov-shaw-2 .mov-bg,
+.mov-shaw-4 .mov-bg {
+  background-image: url('images/shaw-2-800.jpg');
+  background-size: 130%;
+  background-position: -5px center;
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/shaw-2.jpg');
+  }
+}
+
+.mov-shaw-4 .mov-tech-img,
+.mov-shaw-5 .mov-tech-img {
+  background-image: url('images/shaw-tech.png');
+}
+
+.mov-shaw-5 .mov-tech-img {
+  display: none;
+
+  @media screen and (min-width: 700px) {
+    display: block;
+  }
+}
+
+.mov-shaw-5 .mov-bg {
+  background-image: url('images/shaw-5-800.jpg');
+  background-size: 130%;
+  background-position: -5px center;
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+    background-position: center;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/shaw-5.jpg');
+  }
+}
+
+
+
+/*------------------------------------------------
+  CASABLANCA
+-------------------------------------------------*/
+.mov-casa-2 .mov-bg,
+.mov-casa-5 .mov-bg {
+  background-image: url('images/casa-2-800.jpg');
+  background-position: center;
+  background-size: 120%;
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/casa-2.jpg');
+    background-size: cover;
+  }
+}
+
+.mov-casa-5 .mov-tech-img {
+  background-image: url('images/casa-tech.png');
+  background-position: center;
+  background-size: contain;
+  @media screen and (min-width: 1000px) {
+    background-size: contain;
+    background-position: right;
+  }
+}
+
+
+/*------------------------------------------------
+  Titanic
+-------------------------------------------------*/
+.mov-titanic-2 .mov-bg,
+.mov-titanic-4 .mov-bg {
+  background-image: url('images/titanic-2-800.jpg');
+  background-size: 125%;
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/titanic-2.jpg');
+  }
+}
+
+.mov-titanic-4 .mov-tech-img {
+  background-image: url('images/titanic-tech.png');
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.iceberg-white,
+.iceberg-red {
+  position: absolute;
+  top: 40px;
+  right: 25%;
+  max-width: 45px;
+}
+
+.iceberg-red {
+  animation: blink infinite .5s steps(1, end);
+}
+
+
+
+/*------------------------------------------------
+  YOU'VE GOT MAIL
+-------------------------------------------------*/
+.mov-mail-2 .mov-bg,
+.mov-mail-5 .mov-bg {
+  background-image: url('images/mail-2-800.jpg');
+  background-position: right center;
+  background-size: 115%;
+  @media screen and (min-width: 700px) {
+    background-position: center;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/mail-2.jpg');
+    background-size: contain;
+  }
+}
+
+.mov-mail-5 .mov-tech-img {
+  background-image: url('images/mail-tech-small.jpg');
+  background-position: right center;
+  background-size: 115%;
+  @media screen and (min-width: 700px) {
+    background-position: right;
+  }
+  @media screen and (min-width: 1000px) {
+    background-image: url('images/mail-tech.jpg');
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+
+
+/*------------------------------------------------
+  ENDING
+-------------------------------------------------*/
+
+.mov-end-1 {
+
+  .mov-bg {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    ms-flex-line-pack: center;
+    align-content: center;
+  }
+
+  .mov-txt-white {
+    text-transform: none;
+    font: 1em Roboto Slab;
+  }
+}
+
+.mov-the-end {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.mov-buttons {
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+
+/*------------------------------------------------
+  PROGRESS BAR
+-------------------------------------------------*/
+
+.mov-progress-bar {
+  z-index: 1000;
+  position: fixed;
+  top: 85px;
+  right: 5px;
+  height: calc(100% - 190px);
+  width: 5px;
+  background: $darkblue;
+
+  @media screen and (min-width: 1000px) {
+    display: none;
+  }
+}
+
+.mov-prog {
+  width: 100%;
+  height: 10px;
+  background: $yellow;
+}
+
+
+
+/*------------------------------------------------
+  BOTTOM BAR
+-------------------------------------------------*/
+
+.mov-bottom-bar.mov-bottom-bar {
+  background: #000;
+  opacity: .6;
+  padding: 12px 1%;
+  float: left;
+  width: 100%;
+  font: .75em VAG Rounded W01 Light;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  @media screen and (min-width: 375px) {
+    font-size: .85em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 10px 1%;
+  }
+}
+
+.mov-bottom-bar a {
+  color: #ffed00;
+}
+
+.mov-bottom-bar a:hover {
+  color: $blue;
+}
+
+
+/* Back to top
+--------------------------------------------------------------- */
+
+#back-top {
+    border-radius: 10px;
+    position:fixed;
+    bottom:70px;
+    z-index:1100;
+    right: 10px;
+    opacity: 0.4;
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    &:hover {
+        opacity: 1;
+        transition: .3s;
+    }
+    a {
+        color: #333;
+        text-shadow: 1px 1px 1px #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        i {
+            display: block;
+            font-size: 2.1rem;
+        }
+    }
+
+    @media screen and (min-width: 1100px) {
+      bottom: 20px;
+      right: 20px;
+      padding: 7px;
+
+      i {
+            display: block;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
